@@ -10,8 +10,8 @@ function App() {
     <div className="App">
 
       <header className="header">
-        <Link to="/">Dispatch</Link>
-        <Link to="/box-dispatches">View dispatched boxes</Link>
+        <Link to="/"><button>Dispatch</button> </Link>
+        <Link to="/box-dispatches"> <button>View dispatched boxes</button></Link>
       </header>
 
       <Routes>
