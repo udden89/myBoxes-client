@@ -1,0 +1,28 @@
+:root{
+  --height-header: 90px;  
+  --margin-to-header: 60px;
+}
+
+.header{
+  position: fixed;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  z-index: 99;
+  height: var(--height-header);
+  top: 0;
+  background-color: var(--main-brown);
+}
+
+.header button{
+  height: 80%;
+  margin: 10px;
+  width: 200px;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--main-grey);
+}
+
+.header button:hover{
+  cursor: pointer;
+}

@@ -1,16 +1,13 @@
 .viewContainer{
   display: flex;
   justify-content: center;
+  margin-top: calc(var(--height-header) + var(--margin-to-header));
 }
 
 .boxForm{
   display: flex;
   width: 600px;
   flex-direction: column;
-}
-
-label{
-  
 }
 
 input{

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import boxAPI from '../api_calls/boxAPI'
-
+import { findMostFrequentElementInArray } from '../utils/utils'
 
 const BoxContext = React.createContext({
   listOfBoxes: [],
@@ -43,21 +43,8 @@ export const BoxContextProvider = (props) => {
     setBoxSummary({
       totalShippingCost: tempCost,
       totalWeight: tempWeight,
-      mostFrequentCountry: findMostFrequentInArray(tempListOfCountries)
+      mostFrequentCountry: findMostFrequentElementInArray(tempListOfCountries)
     })
-
-    console.log(boxSummary)
-
-  }
-
-  function findMostFrequentInArray(array) {
-    console.log(array)
-    return Object.entries(
-      array.reduce((a, v) => {
-        a[v] = a[v] ? a[v] + 1 : 1
-        return a
-      }, {})
-    ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0]
   }
 
   return (

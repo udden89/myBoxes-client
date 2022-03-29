@@ -35,7 +35,7 @@ export const ListOfBoxDispatches = () => {
 
             <div className={css.detailedInfo}>
               <span><p>Total Weight:</p><h2>{boxSummary.totalWeight}</h2></span>
-              <span><p>Most Destination arrivals:</p><h2>{boxSummary.mostFrequentCountry}</h2></span>
+              <span><p>Most receiving countries:</p><h2>{boxSummary.mostFrequentCountry}</h2></span>
               <span><p>Total shipping cost:</p><h2>{boxSummary.totalShippingCost.toFixed(2)}</h2><p>SEK</p></span>
             </div>
 
@@ -54,7 +54,7 @@ export const ListOfBoxDispatches = () => {
                   <div className={css.detailedInfo}>
                     <span><p>Weight:</p><h2>{box.weight}</h2></span>
                     <span><p>Destination country:</p><h2>{box.destinationCountry}</h2></span>
-                    <span><p>Shipping cost:</p><h2>{box.shippingCost}</h2><p>SEK</p></span>
+                    <span><p>Shipping cost:</p><h2>{box.shippingCost.toFixed(2)}</h2><p>SEK</p></span>
                   </div>
 
                 </div>

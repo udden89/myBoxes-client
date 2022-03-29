@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  margin-top: calc(var(--height-header) + var(--margin-to-header));
 }
 
 .boxShippingCardContainer{
@@ -39,8 +40,4 @@
   width: 100%;
   justify-content: space-between;;
   align-items: center;
-}
-
-.color{
-
 }

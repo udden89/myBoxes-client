@@ -26,6 +26,7 @@ export const DispatchNewBox = () => {
   }
 
   function handleChange(event) {
+    console.log(event.target.value)
     switch (event.target.id) {
       case "receiverName":
         setReceiverName(event.target.value)
@@ -42,6 +43,7 @@ export const DispatchNewBox = () => {
       default:
         break
     }
+    console.log(destinationCountry)
   }
 
   return (
@@ -54,9 +56,13 @@ export const DispatchNewBox = () => {
         <label > Box colour:</label>
         <input id='boxColour' type="color" onChange={handleChange} />
         <label > Destination country:</label>
-        <input id='destinationCountry' type="text" onChange={handleChange} value={destinationCountry.toUpperCase()} />
+        <select name="destinationCountry" id="destinationCountry" onChange={handleChange} value={destinationCountry.toUpperCase()}>
+          <option name="sweden"> SWEDEN</option>
+          <option name="china"> CHINA</option>
+          <option name="brazil"> BRAZIL</option>
+          <option name="australia"> AUSTRALIA</option>
+        </select>
         <input type="submit" value="Submit" />
-        {/* <button className='btn' onClick={dispatch} >Dispatch</button> */}
       </form>
     </div>
   )
