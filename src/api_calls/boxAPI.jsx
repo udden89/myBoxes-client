@@ -1,8 +1,7 @@
 import React from 'react'
 
-const fetchAllBoxDispatches = async () => {
+async function fetchAllBoxDispatches() {
   try {
-    console.log("fire")
     let res = await fetch("/box")
     return await res.json()
   } catch (error) {
@@ -10,7 +9,7 @@ const fetchAllBoxDispatches = async () => {
   }
 }
 
-const dispatchNewBox = async (box) => {
+async function dispatchNewBox(box) {
   try {
     let res = await fetch("/box", {
       method: 'POST',
@@ -18,7 +17,6 @@ const dispatchNewBox = async (box) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(box),
-
     })
 
     return await res.json()

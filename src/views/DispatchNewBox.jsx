@@ -1,72 +1,63 @@
 import React, { useState, useContext } from 'react'
 import BoxContext from '../context/box.context'
+import { hexToRgb } from '../utils/utils'
+
+import css from './dispatchNewBox.module.css'
 
 export const DispatchNewBox = () => {
 
   const boxAPI = useContext(BoxContext)
 
-  const [receiverName, setReceiverName] = useState("")
-  const [boxWeight, setBoxWeight] = useState(0)
+  const [receiverName, setReceiverName] = useState("Mac")
+  const [boxWeight, setBoxWeight] = useState(2)
   const [boxColor, setBoxColor] = useState("")
-  const [destinationCountry, setDestinationCountry] = useState("")
+  const [destinationCountry, setDestinationCountry] = useState("sweden")
 
-  const dispatch = async (e) => {
+  async function dispatch(e) {
     e.preventDefault()
     const box = {
       receiver: receiverName,
       weight: boxWeight,
-      color: boxColor,
+      color: JSON.stringify(boxColor),
       destinationCountry: destinationCountry
     }
+    console.log("BOX:", box)
     boxAPI.dispatchNewBox(box)
   }
 
-  const handleChange = (e) => {
-    switch (e.target.id) {
+  function handleChange(event) {
+    switch (event.target.id) {
       case "receiverName":
-        setReceiverName(e.target.value)
+        setReceiverName(event.target.value)
         break
       case "boxWeight":
-        setBoxWeight(e.target.value)
+        setBoxWeight(event.target.value)
         break
       case "boxColour":
-        setBoxColor(hexToRgb(e.target.value))
+        setBoxColor(hexToRgb(event.target.value))
         break
       case "destinationCountry":
-        setDestinationCountry(e.target.value)
+        setDestinationCountry(event.target.value)
         break
       default:
         break
     }
   }
 
-  function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex)
-    return result ? {
-      r: parseInt(result[1], 16),
-      g: parseInt(result[2], 16),
-      b: parseInt(result[3], 16)
-    } : null
-  }
-
   return (
-    <div>
-      <form className=''>
-        <label > Name of the receiver:
-          <input id='receiverName' type="text" onChange={handleChange} />
-        </label>
-        <label > Box weight:
-          <input id='boxWeight' type="number" onChange={handleChange} />
-        </label>
-        <label > Box colour:
-          <input id='boxColour' type="color" onChange={handleChange} />
-        </label>
-        <label > Destination country:
-          <input id='destinationCountry' type="text" onChange={handleChange} />
-        </label>
-        <button className='btn' onClick={dispatch} >Dispatch</button>
+    <div className={css.viewContainer}>
+      <form className={css.boxForm} onSubmit={dispatch}>
+        <label > Name of the receiver:</label>
+        <input id='receiverName' type="text" onChange={handleChange} value={receiverName} />
+        <label > Box weight (kg):</label>
+        <input id='boxWeight' type="number" onChange={handleChange} value={boxWeight} />
+        <label > Box colour:</label>
+        <input id='boxColour' type="color" onChange={handleChange} />
+        <label > Destination country:</label>
+        <input id='destinationCountry' type="text" onChange={handleChange} value={destinationCountry.toUpperCase()} />
+        <input type="submit" value="Submit" />
+        {/* <button className='btn' onClick={dispatch} >Dispatch</button> */}
       </form>
-      {console.log(boxColor)}
     </div>
   )
 }
