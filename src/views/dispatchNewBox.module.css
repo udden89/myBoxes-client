@@ -36,4 +36,5 @@ input, select{
 
 .submitBtn:hover{
   cursor: pointer;
-  background-color: rgb(203, 250, 203)}
+  transform: scale(0.99);
+}
