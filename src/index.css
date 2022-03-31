@@ -1,8 +1,12 @@
 :root{  
   --main-grey: #eeeeee;
   --main-brown: #edd6a5; 
+  --shadow: 1px 1px 4px 0px #0000004f;
 }
 
+.shadow{
+  box-shadow: var(--shadow);
+}
 
 body {
   margin: 0;

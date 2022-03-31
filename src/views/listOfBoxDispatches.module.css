@@ -9,7 +9,7 @@
 .boxShippingCardContainer{
   border-radius: 10px;
   margin: 5px;
-  box-shadow: 1px 1px 4px 0px #0000004f;
+  box-shadow: var(--shadow);
 }
 
 .boxShippingCard{
@@ -25,8 +25,7 @@
 
 .boxShippingCard h1, h2, p {
   color: rgb(85, 85, 85);
-  display: flex;
-  /* text-shadow: 0px 0px 4px #4e4e4e; */
+  display: flex;  
   margin: 5px;    
 }
 

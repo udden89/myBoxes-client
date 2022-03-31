@@ -14,11 +14,10 @@ export function rgbToHex({ r, g, b }) {
 }
 
 export function findMostFrequentElementInArray(array) {
-  console.log(array)
   return Object.entries(
-    array.reduce((a, v) => {
-      a[v] = a[v] ? a[v] + 1 : 1
-      return a
+    array.reduce((previous, current) => {
+      previous[current] = previous[current] ? previous[current] + 1 : 1
+      return previous
     }, {})
-  ).reduce((a, v) => (v[1] >= a[1] ? v : a), [null, 0])[0]
+  ).reduce((previous, current) => (current[1] >= previous[1] ? current : previous), [null, 0])[0]
 }

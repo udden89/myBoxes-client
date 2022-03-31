@@ -4,15 +4,36 @@
   margin-top: calc(var(--height-header) + var(--margin-to-header));
 }
 
+.form{
+
+}
+
 .boxForm{
   display: flex;
   width: 600px;
   flex-direction: column;
+  background-color: var(--main-grey);
+  padding: 20px;
+  border-radius: 10px;  
+  box-shadow: var(--shadow);
 }
 
-input{
+input, select{
   height: 40px;
   margin-bottom: 10px;
   margin-top: 5px;
-  padding-left: 10px;
+  padding-left: 10px;  
 }
+
+.submitBtn{
+  border-radius: 5px;
+  margin: 10px;
+  margin-top: 50px;
+  background-color: var(--main-brown);
+  border: none;
+  box-shadow: var(--shadow);
+}
+
+.submitBtn:hover{
+  cursor: pointer;
+  background-color: rgb(203, 250, 203)}
