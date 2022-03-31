@@ -10,13 +10,13 @@ function App() {
     <div className="App">
 
       <header className={css.header}>
-        <Link to="/"><button>Dispatch a box</button> </Link>
-        <Link to="/box-dispatches"> <button>View dispatched boxes</button></Link>
+        <Link to="/addbox"><button>Dispatch a box</button> </Link>
+        <Link to="/listboxes"> <button>View dispatched boxes</button></Link>
       </header>
 
       <Routes>
-        <Route path="/" element={<DispatchNewBox />} />
-        <Route path="/box-dispatches" element={<ListOfBoxDispatches />} />
+        <Route path="/addbox" element={<DispatchNewBox />} />
+        <Route path="/listboxes" element={<ListOfBoxDispatches />} />
       </Routes>
 
     </div>
