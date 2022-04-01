@@ -22,7 +22,7 @@ export const DispatchNewBox = () => {
       receiver: receiverName,
       weight: boxWeight,
       color: JSON.stringify(hexToRgb(boxColor)),
-      destinationCountry: destinationCountry
+      destinationCountry: destinationCountry.toUpperCase()
     }
     boxCTX.dispatchNewBox(box)
     resetForm()
