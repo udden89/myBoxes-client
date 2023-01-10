@@ -1,34 +1,31 @@
-import React from 'react'
-
 async function fetchAllBoxDispatches() {
   try {
-    let res = await fetch("/box")
-    return await res.json()
+    let res = await fetch("/box");
+    return await res.json();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
 async function dispatchNewBox(box) {
   try {
     let res = await fetch("/box", {
-      method: 'POST',
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify(box),
-    })
+    });
 
-    return await res.json()
-
+    return await res.json();
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }
 
 const boxAPI = {
   fetchAllBoxDispatches,
-  dispatchNewBox
-}
+  dispatchNewBox,
+};
 
-export default boxAPI
+export default boxAPI;
